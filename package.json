@@ -1,0 +1,20 @@
+{
+  "name": "transbank",
+  "version": "1.0.25",
+  "description": "Transbank implementation for node.js (Not official)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "transbank",
+    "tbk"
+  ],
+  "author": "Fabián Bravo <fabian.bravo.abarca@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "pem": "^1.8.3",
+    "soap": "^0.16.0",
+    "xml": "^1.0.1"
+  }
+}
