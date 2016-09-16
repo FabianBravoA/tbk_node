@@ -41,14 +41,14 @@ Also, you don't have to create a new TBK object with every new transaction, just
   
 WebPay initTransaction, where callback is a function that receives error and result params. If the signature of transbank's response doesn't match with WebPay's certificate, it will come as an error for the callback function too. This applies for any method.
 
-##getTransactionResult
+###getTransactionResult
 Once you receive the init transaction response, you can call this method using the token included in that response.
 
     TBK.getTransactionResult(token, callback)
 
 The callback, again, is a function that receives error and result params, in the result param you will find a JSON object with all buyer's data, check transbank documentation for more details about it (the XML response from transbank's servers is automatically transformed into json).
 
-##acknowledgeTransaction
+###acknowledgeTransaction
 If the payment is accepted, call this method with the token you got from transaction result :
 
     TBK.acknowledgeTransaction(token, callback)
