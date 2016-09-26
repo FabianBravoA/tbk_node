@@ -1,4 +1,7 @@
 # tbk_node
+
+[![NPM](https://nodei.co/npm/transbank.png)](https://nodei.co/npm/<package>/)
+
 Transbank node.js module (NOT OFFICIAL)
 
 ##Install
