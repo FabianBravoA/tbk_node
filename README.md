@@ -1,6 +1,6 @@
 # tbk_node
 
-[![NPM](https://nodei.co/npm/transbank.png)](https://nodei.co/npm/<package>/)
+[![NPM](https://nodei.co/npm/transbank.png)](https://nodei.co/npm/transbank/)
 
 Transbank node.js module (NOT OFFICIAL)
 
@@ -15,7 +15,7 @@ If you want to test your transbank implementation, just use the configuration pr
     var tbk               = require('transbank');
     ...
     var tbkConfig         = tbk.config;
-    var TBKObject         0 new tbk.TBK(tbkConfig);
+    var TBKObject         = new tbk.TBK(tbkConfig);
     
 This way you will end up with a full working Transbank object, where, through its functions, you can manage all your webpay transactions.
 
