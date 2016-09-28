@@ -1,6 +1,6 @@
 {
   "name": "transbank",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Transbank implementation for node.js (Not official)",
   "main": "index.js",
   "scripts": {
