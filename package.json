@@ -1,6 +1,6 @@
 {
   "name": "transbank",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Transbank implementation for node.js (Not official)",
   "main": "index.js",
   "scripts": {
@@ -11,10 +11,11 @@
     "tbk"
   ],
   "author": "Fabián Bravo <fabian.bravo.abarca@gmail.com>",
-  "license": "ISC",
+  "license": "LGPL",
   "dependencies": {
     "pem": "^1.8.3",
     "soap": "^0.16.0",
+    "ursa": "^0.9.4",
     "xml": "^1.0.1",
     "xml-crypto": "^0.8.4",
     "xmldom": "^0.1.22"
