@@ -4,11 +4,11 @@
 
 Transbank node.js module (NOT OFFICIAL)
 
-##Install
+## Install
 
     npm install transbank
 
-##Config
+## Config
 
 If you want to test your transbank implementation, just use the configuration provided by this plugin : 
 
@@ -35,23 +35,24 @@ Also, you can fill those fields using environment variables :
     export TBK_PUBLIC_KEY=certs/public_test_cert.pem
     export TBK_WEBPAY_KEY=certs/webpay_test_cert.pem
     
-##Methods
+## Methods
 To execute any of this methods the TBK object must be initialized. It's not guaranteed to be ready right after you make a new instance of it, so create it at your server start up, or any other place you have to init all main modules of your application.
 Also, you don't have to create a new TBK object with every new transaction, just reuse the same object you created at the beggining. THe constructor just initializes the soap client with credentials supplied in the config object or env variables.
-###initTransaction
+
+### initTransaction
 
     TBK.initTransaction(amount, buyOrder, sessionId, returnURL, finalURL, callback)
   
 WebPay initTransaction, where callback is a function that receives error and result params. If the signature of transbank's response doesn't match with WebPay's certificate, it will come as an error for the callback function too. This applies for any method.
 
-###getTransactionResult
+### getTransactionResult
 Once you receive the init transaction response, you can call this method using the token included in that response.
 
     TBK.getTransactionResult(token, callback)
 
 The callback, again, is a function that receives error and result params, in the result param you will find a JSON object with all buyer's data, check transbank documentation for more details about it (the XML response from transbank's servers is automatically transformed into json).
 
-###acknowledgeTransaction
+### acknowledgeTransaction
 If the payment is accepted, call this method with the token you got from transaction result :
 
     TBK.acknowledgeTransaction(token, callback)
