@@ -1,64 +1,15 @@
+# IMPORTANTE
+Este repositorio pasa a estar obsoleto, para la versión actual de firma y verificación ir a 
+
+[Nuevo módulo tbk_signer](https://github.com/FabianBravoA/tbk_signer)
+
+Que permite hacer una mejor biblioteca usando los últimos avances de javascript, en especial el uso de promesas e import/export. Además que se han quitado dependencias que no se necesitaban y se han agregado test e integración continua para asegurar la calidad del módulo.
+
 # tbk_node
 
 [![NPM](https://nodei.co/npm/transbank.png)](https://nodei.co/npm/transbank/)
 
-Transbank node.js module (NOT OFFICIAL)
-
-## Install
-
-    npm install transbank
-
-## Config
-
-If you want to test your transbank implementation, just use the configuration provided by this plugin : 
-
-    var tbk               = require('transbank');
-    ...
-    var tbkConfig         = tbk.config;
-    var TBKObject         = new tbk.TBK(tbkConfig);
-    
-This way you will end up with a full working Transbank object, where, through its functions, you can manage all your webpay transactions.
-
-To put your custom credentials, once you are ready to production, overwrite the config object : 
-  
-    COMMERCE_CODE   : 597020000541, 					  //TBK sample commerce code
-    ENVIRONMENT     : 'INTEGRACION',						//TBK debug mode as default
-    PRIVATE_KEY     : __dirname + '/certs/private_test_cert.pem',
-    PUBLIC_KEY      : __dirname + '/certs/public_test_cert.pem',
-    WEBPAY_KEY      : __dirname + '/certs/webpay_test_cert.pem'
-    
-Also, you can fill those fields using environment variables : 
-
-    export TBK_COMMERCE_CODE=597020000541
-    export TBK_ENVIRONMENT=INTEGRACION
-    export TBK_PRIVATE_KEY=certs/private_test_cert.pem
-    export TBK_PUBLIC_KEY=certs/public_test_cert.pem
-    export TBK_WEBPAY_KEY=certs/webpay_test_cert.pem
-    
-## Methods
-To execute any of this methods the TBK object must be initialized. It's not guaranteed to be ready right after you make a new instance of it, so create it at your server start up, or any other place you have to init all main modules of your application.
-Also, you don't have to create a new TBK object with every new transaction, just reuse the same object you created at the beggining. THe constructor just initializes the soap client with credentials supplied in the config object or env variables.
-
-### initTransaction
-
-    TBK.initTransaction(amount, buyOrder, sessionId, returnURL, finalURL, callback)
-  
-WebPay initTransaction, where callback is a function that receives error and result params. If the signature of transbank's response doesn't match with WebPay's certificate, it will come as an error for the callback function too. This applies for any method.
-
-### getTransactionResult
-Once you receive the init transaction response, you can call this method using the token included in that response.
-
-    TBK.getTransactionResult(token, callback)
-
-The callback, again, is a function that receives error and result params, in the result param you will find a JSON object with all buyer's data, check transbank documentation for more details about it (the XML response from transbank's servers is automatically transformed into json).
-
-### acknowledgeTransaction
-If the payment is accepted, call this method with the token you got from transaction result :
-
-    TBK.acknowledgeTransaction(token, callback)
-
-Remember then redirect the user to 'urlRedirection', field you can find in the JSON obtained through getTransactionResult.
-
+Transbank node.js module (NO OFICIAL)
 
 THIS IS NOT AN OFFICIAL PLUGIN FROM TRANSBANK!
 
